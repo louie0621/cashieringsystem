@@ -1,34 +1,30 @@
-import tkinter as tk
+from tkinter import *
 
-window = tk.Tk()
+window = Tk()
 screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
 screen = f"{screen_width}{'x'}{screen_height}"
 window.geometry(screen)
-window.configure(bg = "#b6c0ff")
+window.configure(bg = "#afb6bd")
 
-#login
-logincanvas = tk.Canvas(
-    bg = "#9fa6ce",
-    width = 350,
-    height = 450,
-    bd = 5
+sidewidth = screen_width * .25
+sideframe = Frame(window,
+                  bg = "#4884d4",
+                  height = screen_height,
+                  width = sidewidth,
+                  relief = GROOVE
 )
-logincanvas.pack()
-logincanvas.place(x=500,y=150)
+sideframe.pack(side=RIGHT)
 
-lbladminfont = window.option_add('*font','Times 35')
-lbladmin = tk.Label(
-    lbladminfont,
-    text = "Admin",
-    fg = "white",
-    bg = "#9fa6ce"
+mainwidth = screen_width * .75
+mainframe = Frame(window,
+                  bg = "#afb6bd",
+                  height = screen_height,
+                  width = mainwidth,
+                  relief = GROOVE
 )
-lbladmin.pack()
-lbladmin.place(x=610,y=160)
+mainframe.pack(side=LEFT)
 
-login_btn = PhotoImage(file='icon/loginkey.png')
-img_label = Label(image=login_btn)
 
 window.config(cursor="none")
 window.overrideredirect(1)
