@@ -5,6 +5,8 @@ screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
 screen = f"{screen_width}{'x'}{screen_height}"
 window.geometry(screen)
+window.title('Cashiering System')
+window.iconbitmap('icon/apple.ico')
 window.configure(bg = "#b6c0ff")
 
 bgphoto = PhotoImage(file = 'icon/bg.png')
@@ -14,9 +16,9 @@ bglbl.place(x=0,y=0)
 
 #login
 logincanvas = Canvas(
-    bg = "#46caf2",
     width = 350,
     height = 390,
+    bg = "#46caf2",
     bd = 5,
     relief = "groove"
 )
